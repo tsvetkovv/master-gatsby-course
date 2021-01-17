@@ -108,7 +108,9 @@ async function turnSlicemastersIntoPages({ graphql, actions }) {
       path: `/slicemasters/${currentPage}`,
       component: path.resolve('./src/pages/slicemasters.js'),
       context: {
+        skip: i * pageSize,
         currentPage,
+        pageSize,
       },
     });
   });
