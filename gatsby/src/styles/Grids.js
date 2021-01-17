@@ -3,7 +3,11 @@ import styled from 'styled-components';
 export const HomePageGrid = styled.div`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  --columns: 2;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+  @media (max-width: 800px) {
+    --columns: 1;
+  }
 `;
 
 export const ItemsGrid = styled.div`
@@ -20,11 +24,14 @@ export const ItemStyles = styled.div`
     font-size: 0;
   }
   p {
-    transform: rotate(-2deg) translateY(-30px);
+    transform: rotate(-2deg) translateY(-10px);
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
+    margin: 0;
+    font-size: 2rem;
+    font-size: clamp(1.2rem, 5vw, 2rem);
   }
   .mark {
     display: inline;
