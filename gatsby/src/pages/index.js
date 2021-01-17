@@ -3,6 +3,7 @@ import useLatestData from '../utils/useLatestData';
 import { HomePageGrid } from '../styles/Grids';
 import LoadingGrid from '../components/LoadingGrid';
 import ItemGrid from '../components/ItemGrid';
+import SEO from '../components/SEO';
 
 function CurrentlySlicing({ slicemasters }) {
   return (
@@ -23,6 +24,7 @@ function CurrentlySlicing({ slicemasters }) {
 function HotSlices({ hotSlices }) {
   return (
     <div>
+      <SEO title="Home" />
       <h2 className="center">
         <span className="mark tilt">Hot Slices</span>
       </h2>
