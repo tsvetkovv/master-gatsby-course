@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 export default function SEO({ children, location, description, title, image }) {
   const {
-    site: { siteMetadata },
+    site: { siteMetadata, pathPrefix },
   } = useStaticQuery(graphql`
     query {
       site {
@@ -12,12 +12,14 @@ export default function SEO({ children, location, description, title, image }) {
           title
           description
         }
+        pathPrefix
       }
     }
   `);
   return (
     <Helmet titleTemplate={`%s - ${siteMetadata.title}`}>
       <html lang="en" />
+      {pathPrefix && <base target="_blank" href={`${pathPrefix}/`} />}
       <title>{title}</title>
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="alternate icon" href="/favicon.ico" />
