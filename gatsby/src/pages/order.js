@@ -13,8 +13,8 @@ import calculateOrderTotal from '../utils/calculateOrderTotal';
 
 export default function OrderPage({ data }) {
   const { values, updateValue } = useForm({
-    name: 'Viktor',
-    email: 'zwetvik@gmail.com',
+    name: '',
+    email: '',
     marpleSyrup: '',
   });
   const {
@@ -32,8 +32,6 @@ export default function OrderPage({ data }) {
     pizzas,
     values,
   });
-
-  console.log({ loading, error });
 
   if (message) {
     return <p>{message}</p>;

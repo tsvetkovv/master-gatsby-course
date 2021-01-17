@@ -8,13 +8,6 @@ export default {
     title: `Slicks Slices`,
     description: `Blazing fast modern site generator for React`,
   },
-  flags: {
-    PRESERVE_WEBPACK_CACHE: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    FAST_DEV: true,
-    FAST_REFRESH: true,
-    PARALLEL_SOURCING: true,
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
