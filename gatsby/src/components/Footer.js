@@ -10,7 +10,16 @@ const FooterStyles = styled.footer`
 export default function Footer() {
   return (
     <FooterStyles>
-      <p className="center">&copy; Slick's Slices {new Date().getFullYear()}</p>
+      <p className="center">
+        &copy; Slick's Slices {new Date().getFullYear()}.{' '}
+        <a
+          href="https://github.com/Tsvetkovv/master-gatsby-course"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Source code
+        </a>
+      </p>
     </FooterStyles>
   );
 }
