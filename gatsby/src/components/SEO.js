@@ -25,12 +25,18 @@ export default function SEO({ children, location, description, title, image }) {
       <link rel="alternate icon" href="/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
-      <meta name="description" content={siteMetadata.description} />
+      <meta
+        name="description"
+        content={description || siteMetadata.description}
+      />
       {location && <meta property="og:url" content={location.href} />}
-      <meta property="og:image" content={image || '/logo.svg'} />
+      <meta property="og:image" content={image || '/logo.png'} />
+      <meta property="og:type" content={siteMetadata.type} />
       <meta
         property="og:title"
-        content={title || siteMetadata.title}
+        content={
+          title ? `${title} - ${siteMetadata.title}` : siteMetadata.title
+        }
         key="ogtitle"
       />
       <meta

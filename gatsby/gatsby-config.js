@@ -7,7 +7,9 @@ export default {
   pathPrefix: process.env.BASE_URL || '/',
   siteMetadata: {
     title: `Slicks Slices`,
-    description: `Blazing fast modern site generator for React`,
+    description: `The best pizza in the world`,
+    // https://ogp.me/#types
+    type: 'restaurant',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
