@@ -4,13 +4,20 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 export default function SEO({ children, location, description, title, image }) {
   const {
-    site: { siteMetadata, pathPrefix },
+    site: {
+      siteMetadata,
+      pathPrefix,
+      siteBuildMetadata: { buildTime },
+    },
   } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
           description
+        }
+        siteBuildMetadata {
+          buildTime
         }
         pathPrefix
       }
@@ -49,6 +56,9 @@ export default function SEO({ children, location, description, title, image }) {
         content={description || siteMetadata.description}
         key="ogdesc"
       />
+
+      <meta property="og:updated_time" content={buildTime} />
+
       {children}
     </Helmet>
   );
