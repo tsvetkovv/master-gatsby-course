@@ -4,11 +4,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 export default function SEO({ children, location, description, title, image }) {
   const {
-    site: {
-      siteMetadata,
-      pathPrefix,
-      siteBuildMetadata: { buildTime },
-    },
+    site: { siteMetadata, pathPrefix },
+    siteBuildMetadata: { buildTime },
   } = useStaticQuery(graphql`
     query {
       site {
@@ -17,10 +14,10 @@ export default function SEO({ children, location, description, title, image }) {
           description
           type
         }
-        siteBuildMetadata {
-          buildTime
-        }
         pathPrefix
+      }
+      siteBuildMetadata {
+        buildTime
       }
     }
   `);
